@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace O2OMapper
+namespace O2OMapper.Base
 {
     public class PropertyMap
     {

@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using O2OMapper.Base;
 
-namespace O2OMapper.Unoptimized
+namespace O2OMapper.Mappers
 {
-    public class MapperUnoptimized : ObjectCopyBase
+    public class MapperUnoptimized : ObjectCopyReflection
     {
-        public override void MapTypes(Type source, Type target)
-        {
-        }
 
         public override void Copy(object source, object target)
         {
