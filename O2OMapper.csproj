@@ -92,9 +92,11 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ObjectExtensions.cs" />
+    <Compile Include="Base\ObjectCopyBase.cs" />
+    <Compile Include="Base\ObjectExtensions.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="PropertyMap.cs" />
+    <Compile Include="Base\PropertyMap.cs" />
+    <Compile Include="Unoptimized\MapperUnoptimized .cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".git\objects\info\" />
