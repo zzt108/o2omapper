@@ -7,14 +7,19 @@ namespace O2OMapper.Base
     public abstract class ObjectCopyBase
     {
 
+        protected abstract string GetMapKey(Type sourceType, Type targetType);
         public abstract void Copy(object source, object target);
+
+        protected abstract IList<PropertyMap> GetMatchingProperties(Type sourceType, Type targetType);
 
 
     }
 
     public abstract class ObjectCopyReflection : ObjectCopyBase
     {
-        protected virtual IList<PropertyMap> GetMatchingProperties
+        protected abstract void MapTypes(Type source, Type target);
+
+        protected override IList<PropertyMap> GetMatchingProperties
             (Type sourceType, Type targetType)
         {
             var sourceProperties = sourceType.GetProperties();
@@ -39,7 +44,7 @@ namespace O2OMapper.Base
         /// <param name="sourceType"></param>
         /// <param name="targetType"></param>
         /// <returns></returns>
-        protected virtual string GetMapKey(Type sourceType, Type targetType)
+        protected override string GetMapKey(Type sourceType, Type targetType)
         {
             //todo move to optimized class, if not used in other Mapper variants
             var keyName = "Copy_";

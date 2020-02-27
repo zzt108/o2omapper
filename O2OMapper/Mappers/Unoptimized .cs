@@ -18,5 +18,11 @@ namespace O2OMapper.Mappers
                 prop.TargetProperty.SetValue(target, sourceValue, null);
             }
         }
+
+        [Obsolete("This override must be not used", true)]
+        protected override void MapTypes(Type source, Type target)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

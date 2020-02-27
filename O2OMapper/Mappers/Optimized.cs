@@ -9,7 +9,7 @@ namespace O2OMapper.Mappers
     {
         private readonly Dictionary<string, PropertyMap[]> _maps = new Dictionary<string, PropertyMap[]>();
 
-        protected virtual void MapTypes(Type source, Type target)
+        protected override void MapTypes(Type source, Type target)
         {
             var key = GetMapKey(source, target);
             if (_maps.ContainsKey(key))
